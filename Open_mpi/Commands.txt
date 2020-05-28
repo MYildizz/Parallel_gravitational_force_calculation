@@ -1,0 +1,15 @@
+----- FOR PARALLEL CODE -----
+
+gcc -fopenmp -o gravity_mt  gravity_mt.c -lm   //Compile ( Please don't forget -lm )
+
+./gravity_mt stars_100.txt 100 { Thread Count }  //Run 100 Star
+
+./gravity_mt stars_575000.txt 50000 { Thread Count }  //Run //575000 Star
+
+----- FOR SEQUENTIAL CODE -----
+
+gcc sequential_gravity_mt.c -o sequential_gravity_mt -lm   //Compile
+
+./sequential_gravity_mt stars_100.txt 100   //Run //100 Star
+
+./sequential_gravity_mt stars_575000.txt 50000 //Run //575000 Star
